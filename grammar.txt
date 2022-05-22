@@ -1,0 +1,32 @@
+Assignment:
+    Identifier = Exp;
+
+Exp:
+    Exp + Term | Exp - Term | Term
+    \\ Term Exp`
+Exp`:
+    + Term Exp` | - Term Exp` | empty
+
+Term:
+    Term * Fact  | Fact
+    \\ Fact Term`
+Term`:
+    * Fact Term` | Empty
+
+Fact:
+    ( Exp ) | - Fact | + Fact | Literal | Identifier
+
+Identifier:
+    Letter [Letter | Digit]*
+
+Letter:
+    a|...|z|A|...|Z|_
+
+Literal:
+    0 | NonZeroDigit Digit*
+
+NonZeroDigit:
+    1|...|9
+
+Digit:
+    0|1|...|9
