@@ -38,6 +38,7 @@ public:
         {
             if (isZero)
             {
+                curToken = "";
                 throw string("Invalid literal: numeric values cannot have leading zeros");
             }
             curToken += curLine[linePos];
